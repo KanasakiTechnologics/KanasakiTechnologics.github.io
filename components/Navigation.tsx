@@ -8,14 +8,14 @@ export default function navigation() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     return (
         <div>
-            <nav aria-label="Global" className="mx-auto flex w-full items-center justify-between p-6 lg:px-8 fixed">
+            <nav aria-label="Global" className="mx-auto flex w-screen items-center justify-between p-6 lg:px-8 fixed ">
                 <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
                         <span className="sr-only font-semibold">Kanasaki Technologics</span>
                         <img
                             alt=""
                             src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=amber&shade=50"
-                            className="h-8 w-auto"
+                            className="h-8 w-auto transition duration-300 group-hover:brightness-0"
                         />
                     </a>
                 </div>
@@ -29,7 +29,7 @@ export default function navigation() {
                         <Bars3Icon aria-hidden="true" className="size-6" />
                     </button>
                 </div>
-                <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+                <PopoverGroup className="hidden lg:flex lg:gap-x-12 pr-5">
                     <a href="#home" className="text-sm/6 font-semibold text-white hover:text-amber-600 gap-1.5 flex">
                         <House />
                         Home

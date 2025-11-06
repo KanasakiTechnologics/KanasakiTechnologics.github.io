@@ -15,27 +15,29 @@ interface CardProps {
     children: React.ReactNode
     className?: string
 }
-export function CardGrid({title,descriptionIcons = [],children,className,}: CardProps) {
-  return (
-      <Card className={`w-full max-w-sm ${className ?? ""}`}>
-      <CardHeader>
-          <CardTitle>{title}</CardTitle>
-          <CardDescription>
-              <div className="flex items-center gap-3">
-                  {descriptionIcons.slice(0, 3).map((icon, i) => (
-                      <span key={i} className="text-xl">{icon}</span>
-                  ))}
-              </div>
-          </CardDescription>
-      </CardHeader>
-      <CardContent>
-          {children}
-      </CardContent>
-      <CardFooter className="flex-col gap-2">
-        <Button variant="outline" className="w-full">
-          Click More
-        </Button>
-      </CardFooter>
-    </Card>
-  )
+export function CardGrid({ title, descriptionIcons = [], children, className }: CardProps) {
+    return (
+        <Card className={`w-full max-w-sm h-full flex flex-col ${className ?? ""}`}>
+            <CardHeader>
+                <CardTitle className="font-robotoc text-lg">{title}</CardTitle>
+                <CardDescription>
+                    <div className="pt-2 flex items-center gap-3 justify-center">
+                        {descriptionIcons.slice(0, 3).map((icon, i) => (
+                            <span key={i} className="text-xl">{icon}</span>
+                        ))}
+                    </div>
+                </CardDescription>
+            </CardHeader>
+
+            <CardContent className="flex-1 font-poppins">
+                {children}
+            </CardContent>
+
+            <CardFooter className="flex-col gap-2">
+                <Button variant="outline" className="w-full">
+                    Click More
+                </Button>
+            </CardFooter>
+        </Card>
+    )
 }
