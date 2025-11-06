@@ -4,7 +4,7 @@ import ContactSection from "@/components/ContactSection";
 
 export default function page() {
   return (
-    <div>
+    <div className="h-screen snap-y snap-mandatory overflow-y-scroll">
         <HomeSection/>
         <AboutSection/>
         <ContactSection/>

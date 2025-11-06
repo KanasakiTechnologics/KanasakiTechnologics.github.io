@@ -2,7 +2,7 @@ import {CardGrid} from "@/components/CardGrid";
 
 export default function AboutSection() {
   return (
-    <section id="aboutus" className="min-h-screen pt-16 overflow-y-auto bg-cover bg-center bg-no-repeat md:bg-[url(../assets/wallpaper_2.jpg)] bg-[url(../assets/phone_2.jpg)]">
+    <section id="aboutus" className="snap-start min-h-screen pt-16 overflow-y-auto bg-cover bg-center bg-no-repeat md:bg-[url(../assets/wallpaper_2.jpg)] bg-[url(../assets/phone_2.jpg)]">
         <div className="flex items-center justify-center w-full">
             <div className="pt-5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2.5 mx-2">
                 <CardGrid title="What Can I Offer for you">
