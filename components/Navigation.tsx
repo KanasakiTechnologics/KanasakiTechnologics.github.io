@@ -2,6 +2,7 @@
 import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/outline";
 import {Dialog, DialogPanel, PopoverGroup} from "@headlessui/react";
 import {useState} from "react";
+import {Contact, House, LayoutDashboard, UserRoundPen} from "lucide-react";
 
 export default function navigation() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -13,7 +14,7 @@ export default function navigation() {
                         <span className="sr-only font-semibold">Kanasaki Technologics</span>
                         <img
                             alt=""
-                            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=white&shade=500"
+                            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=amber&shade=50"
                             className="h-8 w-auto"
                         />
                     </a>
@@ -29,16 +30,20 @@ export default function navigation() {
                     </button>
                 </div>
                 <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-                    <a href="#home" className="text-sm/6 font-semibold text-white hover:text-amber-600">
+                    <a href="#home" className="text-sm/6 font-semibold text-white hover:text-amber-600 gap-1.5 flex">
+                        <House />
                         Home
                     </a>
-                    <a href="#aboutus" className="text-sm/6 font-semibold text-white hover:text-amber-600">
+                    <a href="#aboutus" className="text-sm/6 font-semibold text-white hover:text-amber-600 gap-1.5 flex">
+                        <UserRoundPen />
                         About Us
                     </a>
-                    <a href="#contact" className="text-sm/6 font-semibold text-white hover:text-amber-600">
+                    <a href="#contact" className="text-sm/6 font-semibold text-white hover:text-amber-600 gap-1.5 flex">
+                        <Contact />
                         Contact Us
                     </a>
-                    <a href="#" className="text-sm/6 font-semibold text-white hover:text-amber-600">
+                    <a href="#" className="text-sm/6 font-semibold text-white hover:text-amber-600 gap-1.5 flex">
+                        <LayoutDashboard />
                         Dashboard
                     </a>
                 </PopoverGroup>
@@ -69,26 +74,30 @@ export default function navigation() {
                             <div className="space-y-2 py-6">
                                 <a
                                     href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
+                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5 hover:text-amber-600 gap-1.5 flex"
                                 >
+                                    <House/>
                                     Home
                                 </a>
                                 <a
                                     href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
+                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5 hover:text-amber-600 gap-1.5 flex"
                                 >
+                                    <UserRoundPen/>
                                     About Us
                                 </a>
                                 <a
                                     href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
+                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5 hover:text-amber-600 gap-1.5 flex"
                                 >
+                                    <Contact />
                                     Contact Us
                                 </a>
                                 <a
                                     href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
+                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5 hover:text-amber-600 gap-1.5 flex"
                                 >
+                                    <LayoutDashboard />
                                     Dashboard
                                 </a>
                             </div>
