@@ -1,12 +1,12 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
 } from "@/components/ui/card"
 
 interface CardProps {
@@ -14,8 +14,10 @@ interface CardProps {
     descriptionIcons?: React.ReactNode[]
     children: React.ReactNode
     className?: string
+    href?: string   // <-- single link prop
 }
-export function CardGrid({ title, descriptionIcons = [], children, className }: CardProps) {
+
+export function CardGrid({ title, descriptionIcons = [], children, className, href }: CardProps) {
     return (
         <Card className={`w-full max-w-sm h-full flex flex-col ${className ?? ""}`}>
             <CardHeader>
@@ -34,8 +36,18 @@ export function CardGrid({ title, descriptionIcons = [], children, className }: 
             </CardContent>
 
             <CardFooter className="flex-col gap-2">
-                <Button variant="outline" className="w-full">
-                    Click More
+                <Button
+                    asChild={!!href}
+                    variant="outline"
+                    className="w-full"
+                >
+                    {href ? (
+                        <Link href={href} target="_blank" rel="noopener noreferrer">
+                            Click More
+                        </Link>
+                    ) : (
+                        <>Click More</>
+                    )}
                 </Button>
             </CardFooter>
         </Card>

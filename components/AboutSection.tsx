@@ -19,7 +19,8 @@ export default function AboutSection() {
                     descriptionIcons={[<Wind size={45}/>, <FolderGit size={45}/>, <Droplets size={45}/>]}>
                     <p>“Curious about my previous builds? Dive into the Project Dashboard and explore what I’ve made.”</p>
                 </CardGrid>
-                <CardGrid title="Create Addons & Experimental Builds">
+                <CardGrid title="Create Addons & Experimental Builds"
+                          href="https://github.com/KanasakiTechnologics/Create-Assembly-Recipes.git">
                     <p>“Need Addons without the cheesy vibes? Explore my GitHub for every Create-Mod addon I’ve built — plus a few experimental projects fresh from the lab.”</p>
                 </CardGrid>
                 <CardGrid
