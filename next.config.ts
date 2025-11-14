@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+interface CustomNextConfig extends NextConfig {
+    allowedDevOrigins?: string[];
+}
+
+const nextConfig: CustomNextConfig = {
+    allowedDevOrigins: ["local-origin.dev", "*.local-origin.dev"],
 };
 
 export default nextConfig;
