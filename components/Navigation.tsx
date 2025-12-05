@@ -42,7 +42,7 @@ export default function navigation() {
                         <Contact />
                         Contact Us
                     </a>
-                    <a href="#media" className="text-sm/6 font-semibold text-white hover:text-amber-600 gap-1.5 flex">
+                    <a href="/media" className="text-sm/6 font-semibold text-white hover:text-amber-600 gap-1.5 flex">
                         <LayoutDashboard />
                         Dashboard
                     </a>
