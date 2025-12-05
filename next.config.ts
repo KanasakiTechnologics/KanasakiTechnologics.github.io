@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    basePath:'/kanasaki-nextjs-2.0',
+    basePath: "/kanasaki-nextjs-2.0",
+    assetPrefix: "/kanasaki-nextjs-2.0/",
     output: "export",
-    distDir:'dist',
+    distDir: "dist",
     images: {
         unoptimized: true,
     },
