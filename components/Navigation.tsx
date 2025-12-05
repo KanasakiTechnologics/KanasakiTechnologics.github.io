@@ -10,7 +10,7 @@ export default function navigation() {
         <div>
             <nav aria-label="Global" className="mx-auto flex w-screen items-center justify-between p-6 lg:px-8 fixed ">
                 <div className="flex lg:flex-1">
-                    <a href="#" className="-m-1.5 p-1.5">
+                    <a href="#home" className="-m-1.5 p-1.5">
                         <span className="sr-only font-semibold">Kanasaki Technologics</span>
                         <img
                             alt=""
@@ -94,7 +94,7 @@ export default function navigation() {
                                     Contact Us
                                 </a>
                                 <a
-                                    href="#"
+                                    href="/MediaPage"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5 hover:text-amber-600 gap-1.5 flex"
                                 >
                                     <LayoutDashboard />
