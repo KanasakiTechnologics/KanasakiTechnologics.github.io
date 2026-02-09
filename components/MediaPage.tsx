@@ -10,7 +10,7 @@ interface Song {
 const DEFAULT_SONGS: Song[] = [
     {
         title: 'I Love You',
-        src: 'assets/sound/I Love You.mp3',
+        src: 'assets/sound/I_Love_You.mp3',
     },
     {
         title: 'Lulu',
