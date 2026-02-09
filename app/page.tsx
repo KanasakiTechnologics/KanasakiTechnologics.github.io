@@ -5,11 +5,13 @@ import MediaPage from "@/components/MediaPage";
 
 export default function page() {
   return (
-    <div className="h-screen snap-y snap-mandatory overflow-y-scroll">
-        <HomeSection/>
-        <AboutSection/>
-        <ContactSection/>
-        <MediaPage/>
-    </div>
+      <div>
+          <div className="h-screen snap-y snap-mandatory overflow-y-scroll">
+              <HomeSection/>
+              <AboutSection/>
+              <ContactSection/>
+          </div>
+          <MediaPage/>
+      </div>
   )
 }
