@@ -27,6 +27,7 @@ export default function AboutSection() {
                 <CardGrid
                     title="Tune In & Unwind"
                     href="/media"
+                    openInNewTab
                     descriptionIcons={[<Disc size={45} />]}>
                     <p>“Bored? Hit play and vibe — my curated playlist is ready for your sing-along session.”</p>
                 </CardGrid>

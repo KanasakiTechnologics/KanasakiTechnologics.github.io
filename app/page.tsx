@@ -11,7 +11,6 @@ export default function page() {
               <AboutSection/>
               <ContactSection/>
           </div>
-          <MediaPage/>
       </div>
   )
 }
