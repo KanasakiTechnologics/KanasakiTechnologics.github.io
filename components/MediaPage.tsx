@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import {Volume2,SkipBack, SkipForward, Play, Pause, Square, VolumeOff} from "lucide-react";
+import { Volume2, VolumeOff, SkipBack, SkipForward, Play, Pause, Square } from "lucide-react";
 
 interface Song {
     title: string;
@@ -62,12 +62,10 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
 
     const handlePrevious = () => {
         setCurrentSongIndex((prev) => (prev - 1 + songs.length) % songs.length);
-        setIsPlaying(true);
     };
 
     const handleNext = () => {
         setCurrentSongIndex((prev) => (prev + 1) % songs.length);
-        setIsPlaying(true);
     };
 
     const handleMute = () => {
