@@ -162,9 +162,9 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
                             title={isMuted ? 'Unmute' : 'Mute'}
                         >
                             {isMuted ? (
-                                <Volume2 className="w-6 h-6 text-white" />
-                            ) : (
                                 <VolumeOff className="w-6 h-6 text-white" />
+                            ) : (
+                                <Volume2 className="w-6 h-6 text-white" />
                             )}
                         </button>
                     </div>
