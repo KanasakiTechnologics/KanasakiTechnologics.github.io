@@ -42,7 +42,7 @@ export default function navigation() {
                         <Contact />
                         Contact Us
                     </a>
-                    <a href="/MediaPage" className="text-sm/6 font-semibold text-white hover:text-amber-600 gap-1.5 flex">
+                    <a href="/components/MediaPage" className="text-sm/6 font-semibold text-white hover:text-amber-600 gap-1.5 flex">
                         <LayoutDashboard />
                         Dashboard
                     </a>
@@ -94,7 +94,7 @@ export default function navigation() {
                                     Contact Us
                                 </a>
                                 <a
-                                    href="/MediaPage"
+                                    href="/components/MediaPage"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5 hover:text-amber-600 gap-1.5 flex"
                                 >
                                     <LayoutDashboard />
