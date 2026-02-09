@@ -13,11 +13,13 @@ export default function AboutSection() {
                 </CardGrid>
                 <CardGrid
                     title="Building Websites 101"
+                    href=""
                     descriptionIcons={[<CodeXml size={45}/>, <Globe size={45}/>, <Wifi size={45}/>]}>
                     <p>“Building your first website? Relax — the internet isn’t as scary as it looks. Skip the chaos and start here.”</p>
                 </CardGrid>
                 <CardGrid
                     title="The Work Showcase"
+                    href=""
                     descriptionIcons={[<Wind size={45}/>, <FolderGit size={45}/>, <Droplets size={45}/>]}>
                     <p>“Curious about my previous builds? Dive into the Project Dashboard and explore what I’ve made.”</p>
                 </CardGrid>
