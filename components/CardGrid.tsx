@@ -54,7 +54,6 @@ export function CardGrid({
                 <Button asChild={!!href} variant="outline" className="w-full">
                     {href ? (
                         openInNewTab ? (
-                            // ✅ new tab
                             <a
                                 href={href}
                                 target="_blank"
@@ -63,7 +62,6 @@ export function CardGrid({
                                 Click More
                             </a>
                         ) : (
-                            // ✅ normal internal navigation
                             <Link href={href}>
                                 Click More
                             </Link>
