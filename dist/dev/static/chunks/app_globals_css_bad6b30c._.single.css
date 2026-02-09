@@ -682,6 +682,10 @@
     margin: calc(var(--spacing) * 1);
   }
 
+  .m-2 {
+    margin: calc(var(--spacing) * 2);
+  }
+
   .m-2\.5 {
     margin: calc(var(--spacing) * 2.5);
   }
@@ -784,6 +788,10 @@
   .size-10 {
     width: calc(var(--spacing) * 10);
     height: calc(var(--spacing) * 10);
+  }
+
+  .h-1 {
+    height: calc(var(--spacing) * 1);
   }
 
   .h-1\/2 {
@@ -1221,6 +1229,10 @@
 
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
+  }
+
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
   }
 
   .py-3\.5 {
