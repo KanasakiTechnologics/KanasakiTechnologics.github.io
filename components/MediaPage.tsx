@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import {Volume2, VolumeOff} from "lucide-react";
+import {Volume2,SkipBack, SkipForward, Play, Pause, Square, VolumeOff} from "lucide-react";
 
 interface Song {
     title: string;
@@ -62,10 +62,12 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
 
     const handlePrevious = () => {
         setCurrentSongIndex((prev) => (prev - 1 + songs.length) % songs.length);
+        setIsPlaying(true);
     };
 
     const handleNext = () => {
         setCurrentSongIndex((prev) => (prev + 1) % songs.length);
+        setIsPlaying(true);
     };
 
     const handleMute = () => {
@@ -119,9 +121,7 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
                             aria-label="Previous"
                             title="Previous Song"
                         >
-                            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M6 6h2v12H6V6zm12 0v12l-10-6z" />
-                            </svg>
+                            <SkipBack className="w-6 h-6 text-white" />
                         </button>
 
                         <button
@@ -131,13 +131,9 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
                             title={isPlaying ? 'Pause' : 'Play'}
                         >
                             {isPlaying ? (
-                                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-                                </svg>
+                                <Pause className="w-6 h-6 text-white" />
                             ) : (
-                                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
+                                <Play className="w-6 h-6 text-white" />
                             )}
                         </button>
 
@@ -147,9 +143,7 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
                             aria-label="Stop"
                             title="Stop"
                         >
-                            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M6 6h12v12H6z" />
-                            </svg>
+                            <Square className="w-6 h-6 text-white" />
                         </button>
 
                         <button
@@ -158,9 +152,7 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
                             aria-label="Next"
                             title="Next Song"
                         >
-                            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M16 18h2V6h-2zm-12 0l10-6-10-6z" />
-                            </svg>
+                            <SkipForward className="w-6 h-6 text-white" />
                         </button>
 
                         <button
@@ -170,13 +162,9 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
                             title={isMuted ? 'Unmute' : 'Mute'}
                         >
                             {isMuted ? (
-                                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                    <Volume2 />
-                                </svg>
+                                <Volume2 className="w-6 h-6 text-white" />
                             ) : (
-                                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                    <VolumeOff />
-                                </svg>
+                                <VolumeOff className="w-6 h-6 text-white" />
                             )}
                         </button>
                     </div>
