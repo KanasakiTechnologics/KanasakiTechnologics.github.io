@@ -27,6 +27,7 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
     const [duration, setDuration] = useState(0);
     const [isMuted, setIsMuted] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [shouldAutoPlay, setShouldAutoPlay] = useState(false);
 
     const currentSong = songs[currentSongIndex];
 
@@ -34,8 +35,15 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
         if (audioRef.current) {
             audioRef.current.src = currentSong.src;
             audioRef.current.load();
+            if (shouldAutoPlay) {
+                audioRef.current.play().catch((error) => {
+                    console.error('Playback error:', error);
+                });
+                setIsPlaying(true);
+                setShouldAutoPlay(false);
+            }
         }
-    }, [currentSongIndex, currentSong.src]);
+    }, [currentSongIndex, currentSong.src, shouldAutoPlay]);
 
     useEffect(() => {
         if (isPlaying && audioRef.current) {
@@ -62,10 +70,12 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
 
     const handlePrevious = () => {
         setCurrentSongIndex((prev) => (prev - 1 + songs.length) % songs.length);
+        setShouldAutoPlay(true);
     };
 
     const handleNext = () => {
         setCurrentSongIndex((prev) => (prev + 1) % songs.length);
+        setShouldAutoPlay(true);
     };
 
     const handleMute = () => {
