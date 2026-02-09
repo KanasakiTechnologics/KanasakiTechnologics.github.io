@@ -29,7 +29,6 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
 
     const currentSong = songs[currentSongIndex];
 
-    // Load song when index changes
     useEffect(() => {
         if (audioRef.current) {
             audioRef.current.src = currentSong.src;
@@ -37,7 +36,6 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
         }
     }, [currentSongIndex, currentSong.src]);
 
-    // Auto play when song loads
     useEffect(() => {
         if (isPlaying && audioRef.current) {
             audioRef.current.play();
@@ -106,20 +104,18 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
     };
 
     const progressPercent = duration ? (currentTime / duration) * 100 : 0;
+
     return (
-        <div id = "media" className="snap-start min-h-screen pt-16 overflow-y-auto bg-cover bg-center bg-no-repeat md:bg-[url(../assets/wallpaper_2.jpg)] bg-[url(../assets/phone_2.jpg)]">
+        <div id="media" className="snap-start min-h-screen pt-16 overflow-y-auto bg-cover bg-center bg-no-repeat md:bg-[url(../assets/wallpaper_2.jpg)] bg-[url(../assets/phone_2.jpg)]">
             <div className="flex flex-col md:h-1/2 p-5 ml-4 mr-4 md:ml-20 md:mr-20 bg-white/50 rounded-xl justify-items-center items-center shadow-lg">
                 <h1 className="font-bebas text-5xl m-2.5 text-center">Audio Player</h1>
                 <br />
 
-                {/* Player Card */}
                 <div className="flex flex-col justify-center items-center h-1/2 w-full md:w-10/12 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 p-5">
-                    {/* Current Song Display */}
                     <div className="mb-3 text-center font-montserrat text-white">
                         <h5 className="text-lg font-semibold">{currentSong.title}</h5>
                     </div>
 
-                    {/* Control Buttons */}
                     <div className="mb-3 flex gap-2">
                         <button
                             onClick={handlePrevious}
@@ -184,7 +180,6 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
                         </button>
                     </div>
 
-                    {/* Seek Slider */}
                     <input
                         type="range"
                         min="0"
@@ -194,14 +189,12 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
                         className="w-full md:w-9/12 h-2 bg-white/30 rounded-lg cursor-pointer appearance-none accent-white"
                     />
 
-                    {/* Time Display */}
                     <div className="mt-2 text-white text-sm font-montserrat">
                         {Math.floor(currentTime / 60)}:{String(Math.floor(currentTime % 60)).padStart(2, '0')} /{' '}
                         {Math.floor(duration / 60)}:{String(Math.floor(duration % 60)).padStart(2, '0')}
                     </div>
                 </div>
 
-                {/* Playlist Dropdown */}
                 <div className="relative mt-5 w-full md:w-auto">
                     <button
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -229,7 +222,6 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
                     )}
                 </div>
 
-                {/* Hidden Audio Element */}
                 <audio
                     ref={audioRef}
                     onTimeUpdate={handleTimeUpdate}
