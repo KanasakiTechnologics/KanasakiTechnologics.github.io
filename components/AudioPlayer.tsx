@@ -9,12 +9,12 @@ interface Song {
 
 const DEFAULT_SONGS: Song[] = [
     {
-        title: '1 - Ban Kagayaku Hoshi',
-        src: 'https://KanasakiTechnologics.github.io/assets/sound/1_Ban_Kagayaku_Hoshi-[HiyoriOST].mp3',
+        title: 'I Love You',
+        src: 'https://github.com/KanasakiTechnologics/KanasakiTechnologics.github.io/blob/1.0.1/assets/sound/I%20Love%20You.mp3',
     },
     {
-        title: 'Honey Lemon',
-        src: 'https://KanasakiTechnologics.github.io/assets/sound/ハニーレモン.mp3',
+        title: 'Lulu',
+        src: 'https://github.com/KanasakiTechnologics/KanasakiTechnologics.github.io/blob/1.0.1/assets/sound/Lulu.mp3',
     },
 ];
 
