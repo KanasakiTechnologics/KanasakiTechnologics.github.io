@@ -8,7 +8,6 @@ import { Contact, House, LayoutDashboard, UserRoundPen } from "lucide-react";
 
 export default function Navigation() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
     return (
         <div>
             <nav aria-label="Global" className="mx-auto flex w-screen items-center justify-between p-6 lg:px-8 fixed">

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Volume2, VolumeOff, SkipBack, SkipForward, Play, Pause, Square } from "lucide-react";
+import { Volume2, VolumeOff, SkipBack, SkipForward, Play, Pause, Square, ListMusic } from "lucide-react";
 
 interface Song {
     title: string;
@@ -212,9 +212,12 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
                 <div className="relative mt-5 w-full md:w-auto">
                     <button
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                        className="px-5 py-3.5 border-solid border-gray-600 border-[1px] rounded-xl cursor-pointer hover:bg-gray-100 transition"
+                        className="flex items-center gap-2 px-5 py-3.5 border-solid border-gray-600 border-[1px] rounded-xl cursor-pointer hover:bg-gray-100 transition"
+                        aria-label="Open song list"
+                        title="Open Song List"
                     >
-                        Playlist {currentSongIndex + 1}
+                        <ListMusic className="w-5 h-5" />
+                        <span>Song List</span>
                     </button>
 
                     {isDropdownOpen && (
