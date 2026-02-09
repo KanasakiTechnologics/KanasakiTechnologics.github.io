@@ -21,6 +21,7 @@ const DEFAULT_SONGS: Song[] = [
         title:'1 Ban Kagayaku Hoshi',
         src:'https://drive.google.com/file/d/1ulYSI9FuQA1onEWZnxMcqROEtWOVII7C/view?usp=drive_link',
     },
+
 ];
 
 export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] }) {
@@ -31,7 +32,6 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
     const [duration, setDuration] = useState(0);
     const [isMuted, setIsMuted] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [shouldAutoPlay, setShouldAutoPlay] = useState(false);
 
     const currentSong = songs[currentSongIndex];
 
@@ -39,15 +39,8 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
         if (audioRef.current) {
             audioRef.current.src = currentSong.src;
             audioRef.current.load();
-            if (shouldAutoPlay) {
-                audioRef.current.play().catch((error) => {
-                    console.error('Playback error:', error);
-                });
-                setIsPlaying(true);
-                setShouldAutoPlay(false);
-            }
         }
-    }, [currentSongIndex, currentSong.src, shouldAutoPlay]);
+    }, [currentSongIndex, currentSong.src]);
 
     useEffect(() => {
         if (isPlaying && audioRef.current) {
@@ -74,12 +67,12 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
 
     const handlePrevious = () => {
         setCurrentSongIndex((prev) => (prev - 1 + songs.length) % songs.length);
-        setShouldAutoPlay(true);
+        setIsPlaying(true);
     };
 
     const handleNext = () => {
         setCurrentSongIndex((prev) => (prev + 1) % songs.length);
-        setShouldAutoPlay(true);
+        setIsPlaying(true);
     };
 
     const handleMute = () => {
