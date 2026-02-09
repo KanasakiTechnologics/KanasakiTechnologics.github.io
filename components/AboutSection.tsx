@@ -31,9 +31,6 @@ export default function AboutSection() {
                     descriptionIcons={[<Disc size={45} />]}>
                     <p>“Bored? Hit play and vibe — my curated playlist is ready for your sing-along session.”</p>
                 </CardGrid>
-                <CardGrid title="What Can I Offer for you">
-                    <p>“Today you boot up with fresh potential, tomorrow you auto-update into a stronger version of yourself, and forever you run as an infinite system that never stops scaling.”</p>
-                </CardGrid>
             </div>
         </div>
     </section>
