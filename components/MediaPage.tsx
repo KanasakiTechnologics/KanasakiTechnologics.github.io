@@ -10,11 +10,11 @@ interface Song {
 const DEFAULT_SONGS: Song[] = [
     {
         title: 'I Love You',
-        src: 'https://github.com/KanasakiTechnologics/KanasakiTechnologics.github.io/blob/1.0.1/assets/sound/I_Love_You.mp3',
+        src: 'https://raw.githubusercontent.com/KanasakiTechnologics/KanasakiTechnologics.github.io/1.0.1/assets/sound/I_Love_You.mp3',
     },
     {
         title: 'Lulu',
-        src: 'https://github.com/KanasakiTechnologics/KanasakiTechnologics.github.io/blob/1.0.1/assets/sound/Lulu.mp3',
+        src: 'https://raw.githubusercontent.com/KanasakiTechnologics/KanasakiTechnologics.github.io/1.0.1/assets/sound/Lulu.mp3',
     },
 ];
 
@@ -38,7 +38,9 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
 
     useEffect(() => {
         if (isPlaying && audioRef.current) {
-            audioRef.current.play();
+            audioRef.current.play().catch((error) => {
+                console.error('Playback error:', error);
+            });
         }
     }, [isPlaying]);
 
@@ -49,7 +51,10 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
             audioRef.current.pause();
             setIsPlaying(false);
         } else {
-            audioRef.current.play();
+            audioRef.current.play().catch((error) => {
+                console.error('Playback error:', error);
+                setIsPlaying(false);
+            });
             setIsPlaying(true);
         }
     };
@@ -226,6 +231,7 @@ export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] })
                     ref={audioRef}
                     onTimeUpdate={handleTimeUpdate}
                     onLoadedMetadata={handleLoadedMetadata}
+                    crossOrigin="anonymous"
                 />
             </div>
         </div>
