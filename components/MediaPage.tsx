@@ -17,6 +17,10 @@ const DEFAULT_SONGS: Song[] = [
         title: 'Lulu',
         src: 'https://raw.githubusercontent.com/KanasakiTechnologics/KanasakiTechnologics.github.io/1.0.1/assets/sound/Lulu.mp3',
     },
+    {
+        title:'1 Ban Kagayaku Hoshi',
+        src:'https://drive.google.com/file/d/1ulYSI9FuQA1onEWZnxMcqROEtWOVII7C/view?usp=drive_link',
+    },
 ];
 
 export default function MediaPage({ songs = DEFAULT_SONGS }: { songs?: Song[] }) {
