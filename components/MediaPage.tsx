@@ -10,11 +10,11 @@ interface Song {
 const DEFAULT_SONGS: Song[] = [
     {
         title: 'I Love You',
-        src: 'https://github.com/KanasakiTechnologics/KanasakiTechnologics.github.io/blob/1.0.1/assets/sound/I%20Love%20You.mp3',
+        src: 'assets/sound/I Love You.mp3',
     },
     {
         title: 'Lulu',
-        src: 'https://github.com/KanasakiTechnologics/KanasakiTechnologics.github.io/blob/1.0.1/assets/sound/Lulu.mp3',
+        src: 'assets/sound/Lulu.mp3',
     },
 ];
 
