@@ -16,7 +16,9 @@ interface CardGridProps {
     children: ReactNode
     className?: string
     href?: string
-    openInNewTab?: boolean // ✅ added
+    openInNewTab?: boolean
+
+    notappear?: boolean // ✅ add this
 }
 
 export function CardGrid({
@@ -26,6 +28,7 @@ export function CardGrid({
                              className,
                              href,
                              openInNewTab = false,
+                             notappear = false, // ✅ default false (button appears)
                          }: CardGridProps) {
     return (
         <Card className={`w-full max-w-sm h-full flex flex-col ${className ?? ""}`}>
@@ -50,27 +53,19 @@ export function CardGrid({
                 {children}
             </CardContent>
 
-            <CardFooter className="flex-col gap-2">
-                <Button asChild={!!href} variant="outline" className="w-full">
-                    {href ? (
-                        openInNewTab ? (
-                            <a
-                                href={href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+            {!notappear && href && (
+                <CardFooter className="flex-col gap-2">
+                    <Button asChild variant="outline" className="w-full">
+                        {openInNewTab ? (
+                            <a href={href} target="_blank" rel="noopener noreferrer">
                                 Click More
                             </a>
                         ) : (
-                            <Link href={href}>
-                                Click More
-                            </Link>
-                        )
-                    ) : (
-                        <>Click More</>
-                    )}
-                </Button>
-            </CardFooter>
+                            <Link href={href}>Click More</Link>
+                        )}
+                    </Button>
+                </CardFooter>
+            )}
         </Card>
     )
 }
