@@ -19,7 +19,27 @@ const DEFAULT_SONGS: Song[] = [
     },
     {
         title:'1 Ban Kagayaku Hoshi',
-        src:'https://drive.google.com/file/d/1ulYSI9FuQA1onEWZnxMcqROEtWOVII7C/view?usp=drive_link',
+        src: 'https://raw.githubusercontent.com/KanasakiTechnologics/KanasakiTechnologics.github.io/1.0.1/assets/sound/1_Ban_Kagayaku_Hoshi-[HiyoriOST].mp3',
+    },
+    {
+        title: 'Honey Lemon',
+        src: 'https://raw.githubusercontent.com/KanasakiTechnologics/KanasakiTechnologics.github.io/1.0.1/assets/sound/ハニーレモン.mp3',
+    },
+    {
+        title: 'Sekai Rinne',
+        src: 'https://raw.githubusercontent.com/KanasakiTechnologics/KanasakiTechnologics.github.io/1.0.1/assets/sound/Sekai_Rinne.mp3',
+    },
+    {
+        title: 'Adrena',
+        src: 'https://raw.githubusercontent.com/KanasakiTechnologics/KanasakiTechnologics.github.io/1.0.1/assets/sound/Adrena.mp3',
+    },
+    {
+        title: 'Lavish',
+        src: 'https://raw.githubusercontent.com/KanasakiTechnologics/KanasakiTechnologics.github.io/1.0.1/assets/sound/Lavish.mp3',
+    },
+    {
+        title: 'Ningen',
+        src: 'https://raw.githubusercontent.com/KanasakiTechnologics/KanasakiTechnologics.github.io/1.0.1/assets/sound/Ningen.mp3',
     },
 
 ];
